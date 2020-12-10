@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobject.Page;
 
-public class MegaTopLoginPage extends Page {
+public class MegaTopAddToFavouritePage extends Page {
     private static final String LOGIN_URL = "https://my.megatop.by/login";
 
     @FindBy(id = "input-39")
@@ -31,16 +31,16 @@ public class MegaTopLoginPage extends Page {
     @FindBy(xpath = "/html/body/div[2]/header/div/div/div[4]/div/div[2]/div[2]/a")
     private WebElement countOfFavouriteGood;
 
-    public MegaTopLoginPage openPage(){
+    public MegaTopAddToFavouritePage openPage(){
         driver.get(LOGIN_URL);
         return this;
     }
 
-    public MegaTopLoginPage(WebDriver driver){
+    public MegaTopAddToFavouritePage(WebDriver driver){
         super(driver);
     }
 
-    public MegaTopLoginPage loginUser(String phoneNumber,String password) {
+    public MegaTopAddToFavouritePage loginUser(String phoneNumber, String password) {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions.visibilityOf(mobilePhone)).sendKeys(phoneNumber);
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
