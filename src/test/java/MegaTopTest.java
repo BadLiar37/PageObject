@@ -2,7 +2,7 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pageobject.megatop.MegaTopFilterPage;
-import pageobject.megatop.MegaTopAddToFavouritePage;
+import pageobject.megatop.MegaTopAddToPageOfFavouriteGoods;
 import pageobject.util.TestDataReader;
 
 public class MegaTopTest {
@@ -21,7 +21,7 @@ public class MegaTopTest {
         String password=TestDataReader.getTestData("test.data.password");
         String goodid=TestDataReader.getTestData("test.data.goodid");
 
-        String countOfFavouriteGoods = new MegaTopAddToFavouritePage(driver)
+        String countOfFavouriteGoods = new MegaTopAddToPageOfFavouriteGoods(driver)
                 .openPage()
                 .loginUser(phoneNumber,password)
                 .addToFavouriteGoods(goodid);
