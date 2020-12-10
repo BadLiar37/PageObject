@@ -20,11 +20,6 @@ public class MegaTopLoginPage extends Page {
     @FindBy(xpath= "/html/body/div/div/div/div/div[3]/div[2]/div/div/div[2]/div[2]/div/div/form/div[4]/div/button/span")
     private WebElement loginButton;
 
-
-    @FindBy(xpath = "/html/body/div/div/div/div[3]/div[3]/div[2]/div/div/div[3]/div/div[2]/div/div/div/div[1]/div/div/div/div[2]")
-    private WebElement userName;
-
-
     public MegaTopLoginPage openPage(){
         driver.get(LOGIN_URL);
         return this;
