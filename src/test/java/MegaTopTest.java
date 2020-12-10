@@ -15,16 +15,16 @@ public class MegaTopTest {
         driver.manage().window().maximize();
     }
 
-//    @Test
-//    public  void loginPageTest(){
-//        String phoneNumber= TestDataReader.getTestData("teat.data.phonenumber");
-//        String password=TestDataReader.getTestData("test.data.password");
-//
-//        String userName = new MegaTopLoginPage(driver)
-//                .openPage()
-//                .loginUser(phoneNumber,password);
-//        Assertions.assertEquals("Саня Сикорский",userName);
-//    }
+    @Test
+    public  void loginPageTest(){
+        String phoneNumber= TestDataReader.getTestData("teat.data.phonenumber");
+        String password=TestDataReader.getTestData("test.data.password");
+
+        String buttonText = new MegaTopLoginPage(driver)
+                .openPage()
+                .loginUser(phoneNumber,password);
+        Assertions.assertEquals("ВОЙТИ",buttonText);
+    }
 
     @Test
     public  void filterPageTest(){
