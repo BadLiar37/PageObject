@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pageobject.megatop.MegaTopFilterPage;
+import pageobject.megatop.MegaTopFilterByMenAndByPricePage;
 import pageobject.megatop.MegaTopAddToPageOfFavouriteGoods;
 import pageobject.util.TestDataReader;
 
@@ -30,7 +30,7 @@ public class MegaTopTest {
 
     @Test
     public  void filterPageTest(){
-        String popupButton = new MegaTopFilterPage(driver)
+        String popupButton = new MegaTopFilterByMenAndByPricePage(driver)
                 .openPage()
                 .filterGoods();
         Assertions.assertEquals("ПОКАЗАТЬ", popupButton);
