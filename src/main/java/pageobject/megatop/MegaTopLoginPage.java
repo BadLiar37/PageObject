@@ -1,9 +1,7 @@
 package pageobject.megatop;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,7 +28,7 @@ public class MegaTopLoginPage extends Page {
     @FindBy(xpath = "/html/body/div/div/div/div/div[2]/header/div/div[1]/a[2]/span/span")
     private WebElement onlyMenGoods;
 
-    @FindBy(xpath = "/html/body/div[2]/header/div/div/div[4]/div/div[2]/div[2]/a/span")
+    @FindBy(xpath = "/html/body/div[2]/header/div/div/div[4]/div/div[2]/div[2]/a")
     private WebElement countOfFavouriteGood;
 
     public MegaTopLoginPage openPage(){
@@ -54,13 +52,13 @@ public class MegaTopLoginPage extends Page {
         return this;
     }
 
-    public  String addToFavouriteGood(String goodId){
+    public  String addToFavouriteGoods(String goodId){
         WebElement onlyMenElement = (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
                 .until(ExpectedConditions.visibilityOf(onlyMenGoods));
         onlyMenElement.click();
         goodToFavourite.click();
-
+        driver.navigate().refresh();
         return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(ExpectedConditions.visibilityOf(countOfFavouriteGood)).getText().trim() ;
+                .until(ExpectedConditions.visibilityOf(countOfFavouriteGood)).getText().trim();
     }
 }

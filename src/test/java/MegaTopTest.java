@@ -16,7 +16,7 @@ public class MegaTopTest {
     }
 
     @Test
-    public  void addToFavouriteTest(){
+    public  void addToFavouriteGoodsTest(){
         String phoneNumber= TestDataReader.getTestData("teat.data.phonenumber");
         String password=TestDataReader.getTestData("test.data.password");
         String goodid=TestDataReader.getTestData("test.data.goodid");
@@ -24,7 +24,7 @@ public class MegaTopTest {
         String countOfFavouriteGoods = new MegaTopLoginPage(driver)
                 .openPage()
                 .loginUser(phoneNumber,password)
-                .addToFavouriteGood(goodid);
+                .addToFavouriteGoods(goodid);
         Assertions.assertEquals("1",countOfFavouriteGoods);
     }
 
@@ -33,7 +33,6 @@ public class MegaTopTest {
         String popupButton = new MegaTopFilterPage(driver)
                 .openPage()
                 .filterGoods();
-
         Assertions.assertEquals("ПОКАЗАТЬ", popupButton);
     }
 
