@@ -41,5 +41,4 @@ public class MegaTopTest {
         driver.quit();
         driver=null;
     }
-
 }

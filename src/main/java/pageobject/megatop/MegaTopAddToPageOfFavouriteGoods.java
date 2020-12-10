@@ -53,9 +53,8 @@ public class MegaTopAddToPageOfFavouriteGoods extends Page {
     }
 
     public  String addToFavouriteGoods(String goodId){
-        WebElement onlyMenElement = (new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS))
-                .until(ExpectedConditions.visibilityOf(onlyMenGoods));
-        onlyMenElement.click();
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.visibilityOf(onlyMenGoods)).click();
         goodToFavourite.click();
         driver.navigate().refresh();
         return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
