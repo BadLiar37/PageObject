@@ -35,7 +35,6 @@ public class MegaTopLoginPage extends Page {
                 .until(ExpectedConditions.visibilityOf(passwordElement)).sendKeys(password);
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions.elementToBeClickable(loginButton)).click();
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS);
         return loginButton.getText().trim();
     }
 }
