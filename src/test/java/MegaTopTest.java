@@ -16,14 +16,16 @@ public class MegaTopTest {
     }
 
     @Test
-    public  void loginPageTest(){
+    public  void addToFavouriteTest(){
         String phoneNumber= TestDataReader.getTestData("teat.data.phonenumber");
         String password=TestDataReader.getTestData("test.data.password");
+        String goodid=TestDataReader.getTestData("test.data.goodid");
 
-        String buttonText = new MegaTopLoginPage(driver)
+        String countOfFavouriteGoods = new MegaTopLoginPage(driver)
                 .openPage()
-                .loginUser(phoneNumber,password);
-        Assertions.assertEquals("ВОЙТИ",buttonText);
+                .loginUser(phoneNumber,password)
+                .addToFavouriteGood(goodid);
+        Assertions.assertEquals("1",countOfFavouriteGoods);
     }
 
     @Test
